@@ -17,7 +17,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.title}>Match Game</Text>
       <View style={styles.gameBoard}>
-        <GameBoard onClick={handleClick} isFlipped={true} />
+        <GameBoard onClick={handleClick} isFlipped={isFlipped} clickVal />
       </View>
       <View style={styles.score}>
         <Text>Score here</Text>
