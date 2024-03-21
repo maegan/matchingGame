@@ -4,23 +4,19 @@ import Constants from "expo-constants";
 import { GameBoard } from "./src/GameBoard";
 
 export default function App() {
-  const [isFlipped, setIsFlipped] = useState(false);
-  const handleClick = (e) => {
-    console.log("yay i pressed");
+  const [score, setScore] = useState(0);
 
-    console.log();
-
-    setIsFlipped(true);
+  const incrementScore = () => {
+    setScore(score + 1);
   };
-
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Match Game</Text>
       <View style={styles.gameBoard}>
-        <GameBoard onClick={handleClick} isFlipped={isFlipped} clickVal />
+        <GameBoard incrementScore={incrementScore} />
       </View>
       <View style={styles.score}>
-        <Text>Score here</Text>
+        <Text style={styles.scoreTxt}>Score: {score}</Text>
       </View>
     </View>
   );
@@ -30,55 +26,36 @@ const styles = StyleSheet.create({
   container: {
     paddingTop: Constants.statusBarHeight,
     flex: 1,
-    backgroundColor: "green",
+    backgroundColor: "mediumpurple",
+  },
+  title: {
+    backgroundColor: "violet",
+    flex: 0.07,
+    marginRight: 5,
+    marginLeft: 5,
+    fontSize: 25,
+    color: "white",
+    textAlign: "center",
+    paddingTop: 15,
   },
   gameBoard: {
     flex: 0.8,
-    backgroundColor: "blue",
+    backgroundColor: "violet",
     margin: 5,
-  },
-  row: {
-    flex: 1,
-    margin: 5,
-    flexDirection: "row",
-  },
-  card: {
-    backgroundColor: "#7ca1b4",
-    flex: 1,
-    marginRight: 5,
-    marginLeft: 5,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  cardBack: {
-    flex: 1,
-    width: 80,
-    marginLeft: 5,
-    marginRight: 5,
-  },
-  cardText: {
-    fontSize: 25,
-    color: "purple",
-    fontWeight: "bold",
-  },
-  title: {
-    backgroundColor: "purple",
-    flex: 0.07,
-    marginRight: 5,
-    marginLeft: 5,
-    fontSize: 25,
-    color: "white",
-    textAlign: "center",
-    paddingTop: 15,
   },
   score: {
-    backgroundColor: "white",
+    backgroundColor: "violet",
     flex: 0.07,
     marginRight: 5,
     marginLeft: 5,
-    fontSize: 20,
+  },
+  scoreTxt: {
+    backgroundColor: "violet",
+    marginRight: 5,
+    marginLeft: 5,
+    fontSize: 25,
     color: "white",
     textAlign: "center",
-    paddingTop: 15,
+    paddingTop: 10,
   },
 });
