@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { View, StyleSheet, TouchableOpacity, Animated } from "react-native";
 import { Card } from "./Card";
 
-export const GameBoard = ({ incrementScore }) => {
+export const GameBoard = ({ incrementScore, decrementScore }) => {
   const [cards, setCards] = useState([
     [
       { name: "Mom", flipped: false, matched: false },
@@ -131,6 +131,7 @@ export const GameBoard = ({ incrementScore }) => {
     card1.flipped = false;
     card2.flipped = false;
     setCards(copyOfCards);
+    decrementScore();
   };
 
   //  ***************************  main part of function ***************** //
