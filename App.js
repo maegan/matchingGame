@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import Constants from "expo-constants";
 import { GameBoard } from "./src/GameBoard";
 
@@ -12,6 +12,11 @@ export default function App() {
   const decrementScore = () => {
     setScore(score - 1);
   };
+
+  const reset = () => {
+    console.log("reset me");
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Match Game</Text>
@@ -23,8 +28,12 @@ export default function App() {
           decrementScore={decrementScore}
         />
       </View>
+
       <View style={styles.score}>
         <Text style={styles.scoreTxt}>Score: {score}</Text>
+        <TouchableOpacity style={styles.reset} onPress={reset}>
+          <Text style={styles.resetTxt}>Reset</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -59,11 +68,29 @@ const styles = StyleSheet.create({
   },
   score: {
     backgroundColor: "violet",
-    flex: 0.07,
+    flex: 0.08,
     marginRight: 5,
     marginLeft: 5,
+    flexDirection: "row",
+  },
+  reset: {
+    backgroundColor: "violet",
+    flex: 0.3,
+    borderWidth: 2,
+    marginLeft: 20,
+    marginRight: -50,
   },
   scoreTxt: {
+    flex: 0.5,
+    backgroundColor: "violet",
+    marginRight: 5,
+    marginLeft: 5,
+    fontSize: 25,
+    color: "white",
+    textAlign: "center",
+    paddingTop: 10,
+  },
+  resetTxt: {
     backgroundColor: "violet",
     marginRight: 5,
     marginLeft: 5,
