@@ -146,6 +146,7 @@ export const GameBoard = ({ incrementScore, decrementScore }) => {
                   key={j}
                   onPress={() => handleFlip(i, j)}
                   value={cardVal.name}
+                  style={styles.rowObj}
                 >
                   <Card value={cardVal.name} isFlipped={cardVal.flipped} />
                 </TouchableOpacity>
@@ -171,5 +172,8 @@ const styles = StyleSheet.create({
     flex: 0.3,
     backgroundColor: "mediumpurple",
     flexDirection: "row",
+  },
+  rowObj: {
+    flex: 0.25, // needed so they take up the correct amount of space
   },
 });
