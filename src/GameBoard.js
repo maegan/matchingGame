@@ -14,7 +14,7 @@ export const GameBoard = ({ incrementScore, decrementScore }) => {
       { name: "Emilia", flipped: false, matched: false },
       { name: "Maddie", flipped: false, matched: false },
       { name: "Jacob", flipped: false, matched: false },
-      { name: "God", flipped: false, matched: false },
+      { name: "Mormor", flipped: false, matched: false },
     ],
     [
       { name: "Mom", flipped: false, matched: false },
@@ -26,7 +26,7 @@ export const GameBoard = ({ incrementScore, decrementScore }) => {
       { name: "Emilia", flipped: false, matched: false },
       { name: "Maddie", flipped: false, matched: false },
       { name: "Jacob", flipped: false, matched: false },
-      { name: "God", flipped: false, matched: false },
+      { name: "Mormor", flipped: false, matched: false },
     ],
   ]);
 
